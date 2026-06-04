@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import DynamicRenderer from '@/components/renderers/DynamicRenderer';
+import { CSVUpload } from '@/components/CSVUpload';
 import { AppConfigData } from '@/lib/types';
 
 const demoTableConfig: AppConfigData = {
@@ -126,6 +127,20 @@ export default function TableDemoPage() {
             onDelete={handleDelete}
             isLoading={isLoading}
           />
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">📤 Bulk Import Records</h2>
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <p className="text-gray-600 mb-6">
+              Upload a CSV file to bulk import records. Your CSV should have headers matching the field names: productName, category, price, quantity, status.
+            </p>
+            <CSVUpload 
+              config={demoTableConfig}
+              onUpload={() => {}}
+              onError={(error) => console.error('CSV error:', error)}
+            />
+          </div>
         </div>
       </div>
     </div>
