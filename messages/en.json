@@ -1,0 +1,47 @@
+{
+  "navigation": {
+    "home": "Home",
+    "demos": "Demos",
+    "form": "Form",
+    "table": "Table",
+    "dashboard": "Dashboard"
+  },
+  "home": {
+    "title": "Build Apps from Metadata",
+    "description": "A production-grade metadata-driven application runtime that dynamically generates forms, tables, dashboards, and workflows from JSON configuration. Handles edge cases gracefully without breaking.",
+    "features": {
+      "dynamic": "Dynamic Rendering",
+      "dynamicDesc": "Automatically render forms, tables, and dashboards from configuration without hardcoding UI components.",
+      "error": "Error Resilience",
+      "errorDesc": "Gracefully handles missing fields, invalid values, unknown components, and inconsistent schemas.",
+      "fullstack": "Full Stack",
+      "fullstackDesc": "Complete solution with frontend renderers, backend APIs, database schema generation, and authentication."
+    }
+  },
+  "form": {
+    "title": "User Registration",
+    "description": "Sign up for an account with just a few details",
+    "submit": "Create Account",
+    "clear": "Clear Form"
+  },
+  "table": {
+    "title": "Products Inventory",
+    "description": "Manage your product inventory with sorting and filtering",
+    "search": "Search products...",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "dashboard": {
+    "title": "Analytics Dashboard",
+    "description": "Real-time business metrics and insights",
+    "stats": "Statistics",
+    "recent": "Recent Records"
+  },
+  "notifications": {
+    "success": "Success!",
+    "error": "Error",
+    "saved": "Changes saved successfully",
+    "importSuccess": "Import completed successfully",
+    "importError": "Import failed"
+  }
+}

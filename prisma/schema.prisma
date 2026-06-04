@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String?
+  name          String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  configs       AppConfig[]
+  records       GeneratedRecord[]
+
+  @@map("users")
+}
+
+model AppConfig {
+  id            String    @id @default(cuid())
+  userId        String
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  name          String
+  description   String?
+  configData    Json
+  
+  configType    String
+  fields        DynamicField[]
+  
+  isPublished   Boolean   @default(false)
+  version       Int       @default(1)
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  records       GeneratedRecord[]
+
+  @@index([userId])
+  @@map("app_configs")
+}
+
+model DynamicField {
+  id            String    @id @default(cuid())
+  configId      String
+  config        AppConfig @relation(fields: [configId], references: [id], onDelete: Cascade)
+
+  fieldName     String
+  fieldType     String
+  label         String
+  required      Boolean   @default(false)
+  defaultValue  String?
+  validation    Json?
+  options       String[]  @default([])
+  
+  order         Int       @default(0)
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([configId])
+  @@map("dynamic_fields")
+}
+
+model GeneratedRecord {
+  id            String    @id @default(cuid())
+  configId      String
+  config        AppConfig @relation(fields: [configId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  data          Json
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([configId])
+  @@index([userId])
+  @@map("generated_records")
+}

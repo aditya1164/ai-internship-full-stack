@@ -1,0 +1,47 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "demos": "Demostraciones",
+    "form": "Formulario",
+    "table": "Tabla",
+    "dashboard": "Panel"
+  },
+  "home": {
+    "title": "Construir Aplicaciones desde Metadatos",
+    "description": "Un tiempo de ejecución de aplicación impulsado por metadatos de grado producción que genera dinámicamente formularios, tablas, paneles y flujos de trabajo a partir de configuración JSON. Maneja casos especiales con gracia sin romperse.",
+    "features": {
+      "dynamic": "Renderización Dinámica",
+      "dynamicDesc": "Renderizar automáticamente formularios, tablas y paneles desde la configuración sin codificar componentes de interfaz de usuario.",
+      "error": "Resiliencia de Errores",
+      "errorDesc": "Maneja elegantemente campos faltantes, valores inválidos, componentes desconocidos y esquemas inconsistentes.",
+      "fullstack": "Stack Completo",
+      "fullstackDesc": "Solución completa con renderizadores de frontend, API de backend, generación de esquema de base de datos y autenticación."
+    }
+  },
+  "form": {
+    "title": "Registro de Usuario",
+    "description": "Regístrese para obtener una cuenta con solo algunos detalles",
+    "submit": "Crear Cuenta",
+    "clear": "Limpiar Formulario"
+  },
+  "table": {
+    "title": "Inventario de Productos",
+    "description": "Administre su inventario de productos con clasificación y filtrado",
+    "search": "Buscar productos...",
+    "delete": "Eliminar",
+    "edit": "Editar"
+  },
+  "dashboard": {
+    "title": "Panel de Análisis",
+    "description": "Métricas e información empresarial en tiempo real",
+    "stats": "Estadísticas",
+    "recent": "Registros Recientes"
+  },
+  "notifications": {
+    "success": "¡Éxito!",
+    "error": "Error",
+    "saved": "Cambios guardados exitosamente",
+    "importSuccess": "Importación completada exitosamente",
+    "importError": "Error en la importación"
+  }
+}
